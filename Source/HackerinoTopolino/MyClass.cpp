@@ -5,6 +5,7 @@
 
 MyClass::MyClass()
 {
+	//cacca
 }
 
 MyClass::~MyClass()
