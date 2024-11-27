@@ -20,4 +20,8 @@ public:
 	
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void OnTextClicked(const FString& Type, const FString& Data);
+
+protected:
+	UPROPERTY(EditAnywhere, Category=Appearance)
+	FTextBlockStyle HintTextStyle;
 };

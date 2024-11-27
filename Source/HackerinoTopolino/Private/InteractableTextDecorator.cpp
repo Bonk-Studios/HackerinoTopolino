@@ -10,8 +10,8 @@
 class FInteractableText : public FRichTextDecorator {
 	UInteractableTextDecorator* Decorator;
 public:
-	FInteractableText(URichTextBlock* InOwner, UInteractableTextDecorator* InDecorator)
-		: FRichTextDecorator(InOwner) {
+	FInteractableText(URichTextBlock* InOwner, const FTextBlockStyle& InTextStyle ,UInteractableTextDecorator* InDecorator)
+		: FRichTextDecorator(InOwner), HintTextStyle(InTextStyle) {
 		Decorator = InDecorator;
 	}
 	
@@ -33,7 +33,7 @@ protected:
 	*/
 	virtual TSharedPtr<SWidget> CreateDecoratorWidget(const FTextRunInfo& InRunInfo, const FTextBlockStyle& InTextStyle) const override {
 		return SNew(STextBlock)
-			.Text(InRunInfo.Content)
+			.Text(InRunInfo.Content).TextStyle(&HintTextStyle)
 			.OnDoubleClicked(FPointerEventHandler::CreateLambda(
 				[InRunInfo, this](const FGeometry& MyGeometry, const FPointerEvent& MouseEvent) {
 					//UE_LOG(LogTemp, Warning, TEXT("Double clicked on %s"), *InRunInfo.MetaData[TEXT("data")]);
@@ -44,8 +44,7 @@ protected:
 	}
 
 private:
-	FTextBlockStyle TextStyle;
-	FTextBlockStyle TooltipTextStyle;
+	FTextBlockStyle HintTextStyle;
 };
 
 /////////////////////////////////////////////////////
@@ -56,7 +55,7 @@ UInteractableTextDecorator::UInteractableTextDecorator(const FObjectInitializer&
 
 // Return our custom class for creating the inline widget
 TSharedPtr<ITextDecorator> UInteractableTextDecorator::CreateDecorator(URichTextBlock* InOwner) {
-	return MakeShareable(new FInteractableText(InOwner, this));
+	return MakeShareable(new FInteractableText(InOwner, HintTextStyle, this));
 }
 
 void UInteractableTextDecorator::OnTextClicked_Implementation(const FString& Type, const FString& Data) {
