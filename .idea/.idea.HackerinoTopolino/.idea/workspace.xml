@@ -13,10 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="211144ec-3ef8-428e-93e4-b4ce2a20a335" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HackerinoTopolino/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HackerinoTopolino/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/Home.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Home.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/WidgetSwitcher.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/WidgetSwitcher.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HackerinoTopolino.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/HackerinoTopolino.uproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackerinoTopolino/HackerinoTopolino.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackerinoTopolino/HackerinoTopolino.Build.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,8 +151,17 @@
       <option name="presentableId" value="Default" />
       <updated>1731171921884</updated>
       <workItem from="1731171929144" duration="139000" />
-      <workItem from="1732705446531" duration="7107000" />
+      <workItem from="1732705446531" duration="9574000" />
     </task>
+    <task id="LOCAL-00001" summary="added doubleclickable text">
+      <option name="closed" value="true" />
+      <created>1732720128472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732720128472</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,5 +171,7 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="added doubleclickable text" />
+    <option name="LAST_COMMIT_MESSAGE" value="added doubleclickable text" />
   </component>
 </project>
