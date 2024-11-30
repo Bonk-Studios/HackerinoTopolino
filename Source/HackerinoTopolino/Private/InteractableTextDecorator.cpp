@@ -16,20 +16,14 @@ public:
 	}
 	
 
-	// Only valid if text is: <tooltip text="Some infos">Some text</>
+	// Only valid if text is: <hint type=[email|hint] data="Some infos">Some text</>
 	virtual bool Supports(const FTextRunParseResults& RunParseResult, const FString& Text) const override {
-		// debug log
-		//UE_LOG(LogTemp, Warning, TEXT("Supports: %s"), *RunParseResult.Name);
 		return RunParseResult.Name == TEXT("hint") && RunParseResult.MetaData.Contains(TEXT("type")) && RunParseResult.MetaData.Contains(TEXT("data"));
 	}
 
 protected:
 	/**
-	* Create a STextBlock with a tooltip text.
 	* 
-	* For <tooltip text="Some infos">Some text</>:
-	* - RunInfo.Content is "Some text"
-	* - RunInfo.MetaData[TEXT("text")] is "Some infos"
 	*/
 	virtual TSharedPtr<SWidget> CreateDecoratorWidget(const FTextRunInfo& InRunInfo, const FTextBlockStyle& InTextStyle) const override {
 		return SNew(STextBlock)
